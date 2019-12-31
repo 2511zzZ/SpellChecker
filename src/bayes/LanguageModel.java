@@ -1,11 +1,11 @@
-package src.zzz;
+package src.bayes;
 
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LanguageModel{
-    static final String path = "./static/BIG.txt";
+    private static final String path = "./static/BIG.txt";
     public Map<String, Integer> model;
 
     // 单例
@@ -39,6 +39,7 @@ public class LanguageModel{
             e.printStackTrace();
         }
         model.entrySet().removeIf(item -> item.getValue() == 1);    // 去噪
+        model.remove(null);
         return model;
     }
 }

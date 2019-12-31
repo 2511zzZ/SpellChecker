@@ -1,4 +1,4 @@
-package src.zzz;
+package src.bayes;
 
 import java.util.*;
 
@@ -21,8 +21,11 @@ public class SimilarWords {
         sortSet.addAll(set);
         Set<String> sortSliceSet = new TreeSet<>((o1, o2) -> model.get(o2).compareTo(model.get(o1)));    // 切片
         Iterator<String> it = sortSet.iterator();
+        if(model.containsKey(word)){
+            sortSliceSet.add(word);
+        }
         int count = 0;
-        while(it.hasNext()&&count<7){
+        while(it.hasNext()&&count<10){
             count++;
             sortSliceSet.add(it.next());
         }
