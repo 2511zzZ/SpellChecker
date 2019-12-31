@@ -5,7 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LanguageModel{
-    public Map<String, Integer> getModel(String path){
+    static final String path = "./static/BIG.txt";
+    public Map<String, Integer> model;
+
+    // 单例
+    private static LanguageModel lm = new LanguageModel(path);
+    private LanguageModel(String path){this.model = getLanguageModel(path); }
+    public static LanguageModel getInstance(){return lm;}
+
+    private Map<String, Integer> getLanguageModel(String path){
         Map<String, Integer> model = new HashMap<>();
         File file = new File(path);
         try {
@@ -30,6 +38,7 @@ public class LanguageModel{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        model.entrySet().removeIf(item -> item.getValue() == 1);    // 去噪
         return model;
     }
 }
