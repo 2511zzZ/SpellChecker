@@ -1,12 +1,9 @@
-package src;
-
-import src.bayes.LanguageModel;
-import src.bayes.SaveModel;
-import src.bayes.SimilarWords;
-import src.edit_distance.EditDistance;
+import bayes.LanguageModel;
+import bayes.SaveModel;
+import bayes.SimilarWords;
+import edit_distance.EditDistance;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.Scanner;
 

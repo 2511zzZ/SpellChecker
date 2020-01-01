@@ -1,4 +1,4 @@
-package src.edit_distance;
+package edit_distance;
 
 import java.util.*;
 

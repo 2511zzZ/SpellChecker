@@ -1,4 +1,4 @@
-package src.bayes;
+package bayes;
 
 import java.io.*;
 import java.util.HashMap;

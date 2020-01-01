@@ -1,4 +1,4 @@
-package src.bayes;
+package bayes;
 
 import org.omg.PortableInterceptor.INACTIVE;
 
